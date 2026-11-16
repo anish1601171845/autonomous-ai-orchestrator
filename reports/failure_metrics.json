@@ -1,0 +1,187 @@
+{
+  "data": "SYNTHETIC execution history",
+  "rows": 10912,
+  "workflows": 800,
+  "split": "GroupShuffleSplit by workflow (train/val/test)",
+  "features": [
+    "task_category",
+    "task_priority",
+    "agent_id",
+    "task_complexity",
+    "dependency_count",
+    "estimated_duration",
+    "current_workload",
+    "deadline_slack"
+  ],
+  "excluded_post_execution": [
+    "actual_duration",
+    "actual_duration_s",
+    "attempts",
+    "completion_status",
+    "deadline_missed",
+    "final_status",
+    "qa_passed",
+    "retries",
+    "task_failed"
+  ],
+  "targets": {
+    "task_failed": {
+      "candidates": {
+        "dummy_prior": {
+          "val_pr_auc": 0.206,
+          "best_params": {},
+          "fit_seconds": 0.03
+        },
+        "logistic_regression": {
+          "val_pr_auc": 0.3607,
+          "best_params": {
+            "C": 0.1
+          },
+          "fit_seconds": 3.27
+        },
+        "random_forest": {
+          "val_pr_auc": 0.3455,
+          "best_params": {
+            "max_depth": 6,
+            "min_samples_leaf": 5,
+            "n_estimators": 300
+          },
+          "fit_seconds": 6.9
+        },
+        "xgboost": {
+          "val_pr_auc": 0.3498,
+          "best_params": {
+            "learning_rate": 0.05,
+            "max_depth": 3
+          },
+          "fit_seconds": 1.28
+        }
+      },
+      "selected": "logistic_regression",
+      "threshold_selected_on": "validation (max F1)",
+      "test_calibrated": {
+        "pr_auc": 0.3616,
+        "precision": 0.3124,
+        "recall": 0.5927,
+        "f1": 0.4092,
+        "brier": 0.1533,
+        "false_positive_rate": 0.3391,
+        "threshold": 0.227,
+        "confusion_matrix": [
+          [
+            1111,
+            570
+          ],
+          [
+            178,
+            259
+          ]
+        ],
+        "positive_rate": 0.2063
+      },
+      "test_uncalibrated_brier": 0.1536,
+      "test_dummy": {
+        "pr_auc": 0.2063,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "brier": 0.1638,
+        "false_positive_rate": 0.0,
+        "threshold": 0.5,
+        "confusion_matrix": [
+          [
+            1681,
+            0
+          ],
+          [
+            437,
+            0
+          ]
+        ],
+        "positive_rate": 0.2063
+      },
+      "n_train": 6993,
+      "n_val": 1801,
+      "n_test": 2118
+    },
+    "deadline_missed": {
+      "candidates": {
+        "dummy_prior": {
+          "val_pr_auc": 0.3204,
+          "best_params": {},
+          "fit_seconds": 0.02
+        },
+        "logistic_regression": {
+          "val_pr_auc": 0.8093,
+          "best_params": {
+            "C": 0.1
+          },
+          "fit_seconds": 0.27
+        },
+        "random_forest": {
+          "val_pr_auc": 0.7944,
+          "best_params": {
+            "max_depth": 6,
+            "min_samples_leaf": 20,
+            "n_estimators": 300
+          },
+          "fit_seconds": 7.08
+        },
+        "xgboost": {
+          "val_pr_auc": 0.8131,
+          "best_params": {
+            "learning_rate": 0.05,
+            "max_depth": 3
+          },
+          "fit_seconds": 1.31
+        }
+      },
+      "selected": "xgboost",
+      "threshold_selected_on": "validation (max F1)",
+      "test_calibrated": {
+        "pr_auc": 0.7846,
+        "precision": 0.6325,
+        "recall": 0.8014,
+        "f1": 0.707,
+        "brier": 0.1364,
+        "false_positive_rate": 0.2299,
+        "threshold": 0.246,
+        "confusion_matrix": [
+          [
+            1092,
+            326
+          ],
+          [
+            139,
+            561
+          ]
+        ],
+        "positive_rate": 0.3305
+      },
+      "test_uncalibrated_brier": 0.134,
+      "test_dummy": {
+        "pr_auc": 0.3305,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "brier": 0.2214,
+        "false_positive_rate": 0.0,
+        "threshold": 0.5,
+        "confusion_matrix": [
+          [
+            1418,
+            0
+          ],
+          [
+            700,
+            0
+          ]
+        ],
+        "positive_rate": 0.3305
+      },
+      "n_train": 6993,
+      "n_val": 1801,
+      "n_test": 2118
+    }
+  }
+}

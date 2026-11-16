@@ -1,0 +1,466 @@
+{
+  "dataset": "Multilingual customer support tickets (real-style, 4k)",
+  "rows": 4000,
+  "languages": {
+    "en": 1391,
+    "de": 848,
+    "es": 812,
+    "fr": 476,
+    "pt": 473
+  },
+  "targets": {
+    "type": {
+      "candidates": {
+        "logistic_regression": {
+          "cv_f1_macro": 0.6847,
+          "best_params": {
+            "C": 16.0
+          },
+          "fit_seconds": 119.53
+        },
+        "linear_svm_sgd": {
+          "cv_f1_macro": 0.6826,
+          "best_params": {
+            "alpha": 0.0002
+          },
+          "fit_seconds": 37.22
+        }
+      },
+      "selected": "logistic_regression",
+      "test_accuracy": 0.6462,
+      "test_f1_macro": 0.6442,
+      "majority_baseline_accuracy": 0.4025,
+      "short_text_test_accuracy": 0.6065,
+      "n_test_short": 704,
+      "accuracy_by_language": {
+        "de": 0.6626,
+        "en": 0.5965,
+        "es": 0.6552,
+        "fr": 0.686,
+        "pt": 0.7174
+      },
+      "labels": [
+        "Change",
+        "Incident",
+        "Problem",
+        "Request"
+      ],
+      "confusion_matrix": [
+        [
+          64,
+          8,
+          3,
+          13
+        ],
+        [
+          7,
+          217,
+          64,
+          34
+        ],
+        [
+          2,
+          79,
+          73,
+          17
+        ],
+        [
+          14,
+          32,
+          10,
+          163
+        ]
+      ],
+      "report": {
+        "Change": {
+          "precision": 0.735632183908046,
+          "recall": 0.7272727272727273,
+          "f1-score": 0.7314285714285714,
+          "support": 88.0
+        },
+        "Incident": {
+          "precision": 0.6458333333333334,
+          "recall": 0.6739130434782609,
+          "f1-score": 0.6595744680851063,
+          "support": 322.0
+        },
+        "Problem": {
+          "precision": 0.4866666666666667,
+          "recall": 0.4269005847953216,
+          "f1-score": 0.45482866043613707,
+          "support": 171.0
+        },
+        "Request": {
+          "precision": 0.7180616740088106,
+          "recall": 0.7442922374429224,
+          "f1-score": 0.7309417040358744,
+          "support": 219.0
+        },
+        "accuracy": 0.64625,
+        "macro avg": {
+          "precision": 0.6465484644792142,
+          "recall": 0.6430946482473081,
+          "f1-score": 0.6441933509964223,
+          "support": 800.0
+        },
+        "weighted avg": {
+          "precision": 0.6414618401564637,
+          "recall": 0.64625,
+          "f1-score": 0.6432507839094431,
+          "support": 800.0
+        }
+      },
+      "n_train": 6029,
+      "n_train_augmented_rows": 2829,
+      "n_test": 800
+    },
+    "priority": {
+      "candidates": {
+        "logistic_regression": {
+          "cv_f1_macro": 0.6732,
+          "best_params": {
+            "C": 16.0
+          },
+          "fit_seconds": 104.42
+        },
+        "linear_svm_sgd": {
+          "cv_f1_macro": 0.6691,
+          "best_params": {
+            "alpha": 0.0002
+          },
+          "fit_seconds": 37.84
+        }
+      },
+      "selected": "logistic_regression",
+      "test_accuracy": 0.6262,
+      "test_f1_macro": 0.5978,
+      "majority_baseline_accuracy": 0.4125,
+      "short_text_test_accuracy": 0.6248,
+      "n_test_short": 717,
+      "accuracy_by_language": {
+        "de": 0.6303,
+        "en": 0.6143,
+        "es": 0.6333,
+        "fr": 0.6442,
+        "pt": 0.6238
+      },
+      "labels": [
+        "high",
+        "low",
+        "medium"
+      ],
+      "confusion_matrix": [
+        [
+          237,
+          13,
+          80
+        ],
+        [
+          27,
+          66,
+          57
+        ],
+        [
+          78,
+          44,
+          198
+        ]
+      ],
+      "report": {
+        "high": {
+          "precision": 0.6929824561403509,
+          "recall": 0.7181818181818181,
+          "f1-score": 0.7053571428571429,
+          "support": 330.0
+        },
+        "low": {
+          "precision": 0.5365853658536586,
+          "recall": 0.44,
+          "f1-score": 0.4835164835164835,
+          "support": 150.0
+        },
+        "medium": {
+          "precision": 0.591044776119403,
+          "recall": 0.61875,
+          "f1-score": 0.6045801526717557,
+          "support": 320.0
+        },
+        "accuracy": 0.62625,
+        "macro avg": {
+          "precision": 0.6068708660378043,
+          "recall": 0.592310606060606,
+          "f1-score": 0.5978179263484606,
+          "support": 800.0
+        },
+        "weighted avg": {
+          "precision": 0.622882929703217,
+          "recall": 0.62625,
+          "f1-score": 0.6234512231566144,
+          "support": 800.0
+        }
+      },
+      "n_train": 6016,
+      "n_train_augmented_rows": 2816,
+      "n_test": 800
+    },
+    "queue": {
+      "candidates": {
+        "logistic_regression": {
+          "cv_f1_macro": 0.6399,
+          "best_params": {
+            "C": 16.0
+          },
+          "fit_seconds": 199.84
+        },
+        "linear_svm_sgd": {
+          "cv_f1_macro": 0.6245,
+          "best_params": {
+            "alpha": 0.0002
+          },
+          "fit_seconds": 44.63
+        }
+      },
+      "selected": "logistic_regression",
+      "test_accuracy": 0.5687,
+      "test_f1_macro": 0.5344,
+      "majority_baseline_accuracy": 0.33,
+      "short_text_test_accuracy": 0.5057,
+      "n_test_short": 704,
+      "accuracy_by_language": {
+        "de": 0.5901,
+        "en": 0.5401,
+        "es": 0.5824,
+        "fr": 0.5638,
+        "pt": 0.5941
+      },
+      "labels": [
+        "Billing and Payments",
+        "Customer Service",
+        "General Inquiry",
+        "Human Resources",
+        "IT Support",
+        "Product Support",
+        "Returns and Exchanges",
+        "Sales and Pre-Sales",
+        "Service Outages and Maintenance",
+        "Technical Support"
+      ],
+      "confusion_matrix": [
+        [
+          63,
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          56,
+          1,
+          0,
+          9,
+          27,
+          1,
+          3,
+          1,
+          27
+        ],
+        [
+          0,
+          5,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          5,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          5,
+          0,
+          0,
+          25,
+          10,
+          3,
+          1,
+          0,
+          43
+        ],
+        [
+          2,
+          16,
+          1,
+          0,
+          10,
+          72,
+          2,
+          1,
+          0,
+          34
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          5,
+          30,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          1,
+          0,
+          14,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          14
+        ],
+        [
+          1,
+          21,
+          0,
+          0,
+          18,
+          38,
+          4,
+          1,
+          4,
+          177
+        ]
+      ],
+      "report": {
+        "Billing and Payments": {
+          "precision": 0.9264705882352942,
+          "recall": 0.9264705882352942,
+          "f1-score": 0.9264705882352942,
+          "support": 68.0
+        },
+        "Customer Service": {
+          "precision": 0.47058823529411764,
+          "recall": 0.448,
+          "f1-score": 0.45901639344262296,
+          "support": 125.0
+        },
+        "General Inquiry": {
+          "precision": 0.3333333333333333,
+          "recall": 0.09090909090909091,
+          "f1-score": 0.14285714285714285,
+          "support": 11.0
+        },
+        "Human Resources": {
+          "precision": 1.0,
+          "recall": 0.2727272727272727,
+          "f1-score": 0.42857142857142855,
+          "support": 11.0
+        },
+        "IT Support": {
+          "precision": 0.38461538461538464,
+          "recall": 0.2808988764044944,
+          "f1-score": 0.3246753246753247,
+          "support": 89.0
+        },
+        "Product Support": {
+          "precision": 0.4675324675324675,
+          "recall": 0.5217391304347826,
+          "f1-score": 0.4931506849315068,
+          "support": 138.0
+        },
+        "Returns and Exchanges": {
+          "precision": 0.75,
+          "recall": 0.7692307692307693,
+          "f1-score": 0.759493670886076,
+          "support": 39.0
+        },
+        "Sales and Pre-Sales": {
+          "precision": 0.7,
+          "recall": 0.5185185185185185,
+          "f1-score": 0.5957446808510638,
+          "support": 27.0
+        },
+        "Service Outages and Maintenance": {
+          "precision": 0.7368421052631579,
+          "recall": 0.5,
+          "f1-score": 0.5957446808510638,
+          "support": 28.0
+        },
+        "Technical Support": {
+          "precision": 0.5728155339805825,
+          "recall": 0.6704545454545454,
+          "f1-score": 0.6178010471204188,
+          "support": 264.0
+        },
+        "accuracy": 0.56875,
+        "macro avg": {
+          "precision": 0.6342197648254337,
+          "recall": 0.4998948791914767,
+          "f1-score": 0.5343525642421942,
+          "support": 800.0
+        },
+        "weighted avg": {
+          "precision": 0.5690566571836542,
+          "recall": 0.56875,
+          "f1-score": 0.5613741861673125,
+          "support": 800.0
+        }
+      },
+      "n_train": 6029,
+      "n_train_augmented_rows": 2829,
+      "n_test": 800
+    }
+  },
+  "ablation_vs_previous_model": {
+    "note": "Previous model: + business_type feature, no subject-only augmentation. Same seeds and hold-out splits.",
+    "type": {
+      "previous_test_accuracy": 0.6613,
+      "previous_short_text_accuracy": 0.5781
+    },
+    "priority": {
+      "previous_test_accuracy": 0.6262,
+      "previous_short_text_accuracy": 0.5314
+    },
+    "queue": {
+      "previous_test_accuracy": 0.5962,
+      "previous_short_text_accuracy": 0.4957
+    },
+    "cv_caveat": "CV scores of the current model are optimistic because subject-only copies of a ticket can fall in different CV folds; reported test numbers use an untouched hold-out."
+  }
+}

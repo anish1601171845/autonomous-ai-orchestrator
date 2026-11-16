@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+*.db
+workspace/*
+!workspace/.gitkeep
+data/raw/*
+!data/raw/.gitkeep
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/

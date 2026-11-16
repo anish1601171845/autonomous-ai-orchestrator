@@ -1,0 +1,88 @@
+# Autonomous AI Multi-Agent Workflow Orchestrator
+#
+#   docker compose up --build -d                    # API :8000 + dashboard :8501 (SQLite)
+#   docker compose --profile postgres up --build -d # same, backed by PostgreSQL
+#   docker compose run --rm api test                # run the test suite in the container
+#   docker compose run --rm api demo --approve      # one end-to-end workflow in the terminal
+#   docker compose run --rm api train               # retrain models (persisted in the models volume)
+#   docker compose run --rm api evaluate            # AegisFlow baseline experiments (memory, risk, debate, recovery)
+#
+# Settings come from .env (optional; copy .env.example). Values below override only what Docker needs.
+
+x-app: &app
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: autonomous-ai-orchestrator:latest
+  env_file:
+    - path: .env
+      required: false
+  restart: unless-stopped
+  volumes:
+    - orchestrator-var:/app/var            # SQLite database (+ HF model cache)
+    - orchestrator-workspace:/app/workspace # generated code, tests and docs per workflow
+    - orchestrator-models:/app/models       # trained models (seeded from the image on first start)
+    - orchestrator-reports:/app/reports     # metrics JSON + figures read by the dashboard
+
+services:
+  api:
+    <<: *app
+    command: ["api"]
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/var/orchestrator.db}
+      WORKSPACE_DIR: /app/workspace
+      MEMORY_INDEX_DIR: /app/var/memory_index
+      HEALTHCHECK_ROLE: api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+        required: false          # only waited for when the postgres profile is enabled
+    # generated-code sandbox runs inside this container; keep it constrained
+    mem_limit: 4g
+    pids_limit: 512
+    security_opt:
+      - no-new-privileges:true
+
+  dashboard:
+    <<: *app
+    command: ["dashboard"]
+    environment:
+      API_URL: http://api:8000
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/var/orchestrator.db}
+      MEMORY_INDEX_DIR: /app/var/memory_index
+      HEALTHCHECK_ROLE: dashboard
+    ports:
+      - "${DASHBOARD_PORT:-8501}:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+    mem_limit: 2g
+    security_opt:
+      - no-new-privileges:true
+
+  # Optional: `docker compose --profile postgres up` and set in .env
+  #   DATABASE_URL=postgresql+psycopg://orchestrator:orchestrator@postgres:5432/orchestrator
+  postgres:
+    image: postgres:16-alpine
+    profiles: ["postgres"]
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: orchestrator
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-orchestrator}
+      POSTGRES_DB: orchestrator
+    volumes:
+      - orchestrator-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U orchestrator -d orchestrator"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  orchestrator-var:
+  orchestrator-workspace:
+  orchestrator-models:
+  orchestrator-reports:
+  orchestrator-pg:

@@ -1,0 +1,3 @@
+# Runtime dependencies for the Docker image (no dev-only extras besides pytest/ruff for the `test` role).
+-r requirements.txt
+psycopg[binary]>=3.1        # PostgreSQL driver for the optional postgres profile

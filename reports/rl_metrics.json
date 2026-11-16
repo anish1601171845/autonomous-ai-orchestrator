@@ -1,0 +1,623 @@
+{
+  "data": "SIMULATED workloads",
+  "algorithm": "PPO (stable-baselines3)",
+  "timesteps": 300000,
+  "eval_episodes": 200,
+  "evaluation": {
+    "round_robin": {
+      "makespan": 33.3963,
+      "load_imbalance_cv": 0.5386,
+      "success_rate": 0.9277,
+      "invalid_actions": 0.0,
+      "priority_weighted_completion": 16.2727,
+      "makespan_std": 11.0497
+    },
+    "least_loaded": {
+      "makespan": 26.2066,
+      "load_imbalance_cv": 0.4141,
+      "success_rate": 0.9387,
+      "invalid_actions": 0.0,
+      "priority_weighted_completion": 13.4817,
+      "makespan_std": 7.5229
+    },
+    "rl_ppo": {
+      "makespan": 26.8372,
+      "load_imbalance_cv": 0.3946,
+      "success_rate": 0.9396,
+      "invalid_actions": 0.0,
+      "priority_weighted_completion": 13.9938,
+      "makespan_std": 7.8929
+    }
+  },
+  "verdict": "PPO did NOT beat the least-loaded heuristic on makespan; the orchestrator keeps least-loaded in 'auto' mode.",
+  "training_curve": [
+    {
+      "timesteps": 2048,
+      "mean_episode_reward": -9.124
+    },
+    {
+      "timesteps": 4096,
+      "mean_episode_reward": -3.729
+    },
+    {
+      "timesteps": 6144,
+      "mean_episode_reward": -0.918
+    },
+    {
+      "timesteps": 8192,
+      "mean_episode_reward": 1.017
+    },
+    {
+      "timesteps": 10240,
+      "mean_episode_reward": 3.792
+    },
+    {
+      "timesteps": 12288,
+      "mean_episode_reward": 5.273
+    },
+    {
+      "timesteps": 14336,
+      "mean_episode_reward": 5.914
+    },
+    {
+      "timesteps": 16384,
+      "mean_episode_reward": 7.164
+    },
+    {
+      "timesteps": 18432,
+      "mean_episode_reward": 7.251
+    },
+    {
+      "timesteps": 20480,
+      "mean_episode_reward": 7.468
+    },
+    {
+      "timesteps": 22528,
+      "mean_episode_reward": 6.719
+    },
+    {
+      "timesteps": 24576,
+      "mean_episode_reward": 7.448
+    },
+    {
+      "timesteps": 26624,
+      "mean_episode_reward": 7.242
+    },
+    {
+      "timesteps": 28672,
+      "mean_episode_reward": 7.326
+    },
+    {
+      "timesteps": 30720,
+      "mean_episode_reward": 8.446
+    },
+    {
+      "timesteps": 32768,
+      "mean_episode_reward": 7.984
+    },
+    {
+      "timesteps": 34816,
+      "mean_episode_reward": 7.647
+    },
+    {
+      "timesteps": 36864,
+      "mean_episode_reward": 7.369
+    },
+    {
+      "timesteps": 38912,
+      "mean_episode_reward": 8.102
+    },
+    {
+      "timesteps": 40960,
+      "mean_episode_reward": 7.52
+    },
+    {
+      "timesteps": 43008,
+      "mean_episode_reward": 8.234
+    },
+    {
+      "timesteps": 45056,
+      "mean_episode_reward": 7.687
+    },
+    {
+      "timesteps": 47104,
+      "mean_episode_reward": 7.974
+    },
+    {
+      "timesteps": 49152,
+      "mean_episode_reward": 8.87
+    },
+    {
+      "timesteps": 51200,
+      "mean_episode_reward": 8.754
+    },
+    {
+      "timesteps": 53248,
+      "mean_episode_reward": 8.395
+    },
+    {
+      "timesteps": 55296,
+      "mean_episode_reward": 7.907
+    },
+    {
+      "timesteps": 57344,
+      "mean_episode_reward": 8.28
+    },
+    {
+      "timesteps": 59392,
+      "mean_episode_reward": 8.765
+    },
+    {
+      "timesteps": 61440,
+      "mean_episode_reward": 8.489
+    },
+    {
+      "timesteps": 63488,
+      "mean_episode_reward": 8.304
+    },
+    {
+      "timesteps": 65536,
+      "mean_episode_reward": 8.669
+    },
+    {
+      "timesteps": 67584,
+      "mean_episode_reward": 8.036
+    },
+    {
+      "timesteps": 69632,
+      "mean_episode_reward": 8.076
+    },
+    {
+      "timesteps": 71680,
+      "mean_episode_reward": 8.162
+    },
+    {
+      "timesteps": 73728,
+      "mean_episode_reward": 8.94
+    },
+    {
+      "timesteps": 75776,
+      "mean_episode_reward": 8.594
+    },
+    {
+      "timesteps": 77824,
+      "mean_episode_reward": 7.585
+    },
+    {
+      "timesteps": 79872,
+      "mean_episode_reward": 8.138
+    },
+    {
+      "timesteps": 81920,
+      "mean_episode_reward": 8.157
+    },
+    {
+      "timesteps": 83968,
+      "mean_episode_reward": 7.934
+    },
+    {
+      "timesteps": 86016,
+      "mean_episode_reward": 8.206
+    },
+    {
+      "timesteps": 88064,
+      "mean_episode_reward": 8.502
+    },
+    {
+      "timesteps": 90112,
+      "mean_episode_reward": 7.651
+    },
+    {
+      "timesteps": 92160,
+      "mean_episode_reward": 8.025
+    },
+    {
+      "timesteps": 94208,
+      "mean_episode_reward": 9.066
+    },
+    {
+      "timesteps": 96256,
+      "mean_episode_reward": 8.824
+    },
+    {
+      "timesteps": 98304,
+      "mean_episode_reward": 8.364
+    },
+    {
+      "timesteps": 100352,
+      "mean_episode_reward": 8.034
+    },
+    {
+      "timesteps": 102400,
+      "mean_episode_reward": 8.689
+    },
+    {
+      "timesteps": 104448,
+      "mean_episode_reward": 7.75
+    },
+    {
+      "timesteps": 106496,
+      "mean_episode_reward": 9.032
+    },
+    {
+      "timesteps": 108544,
+      "mean_episode_reward": 9.432
+    },
+    {
+      "timesteps": 110592,
+      "mean_episode_reward": 9.202
+    },
+    {
+      "timesteps": 112640,
+      "mean_episode_reward": 8.758
+    },
+    {
+      "timesteps": 114688,
+      "mean_episode_reward": 8.239
+    },
+    {
+      "timesteps": 116736,
+      "mean_episode_reward": 7.837
+    },
+    {
+      "timesteps": 118784,
+      "mean_episode_reward": 7.957
+    },
+    {
+      "timesteps": 120832,
+      "mean_episode_reward": 8.209
+    },
+    {
+      "timesteps": 122880,
+      "mean_episode_reward": 8.861
+    },
+    {
+      "timesteps": 124928,
+      "mean_episode_reward": 7.833
+    },
+    {
+      "timesteps": 126976,
+      "mean_episode_reward": 7.38
+    },
+    {
+      "timesteps": 129024,
+      "mean_episode_reward": 8.351
+    },
+    {
+      "timesteps": 131072,
+      "mean_episode_reward": 8.209
+    },
+    {
+      "timesteps": 133120,
+      "mean_episode_reward": 8.148
+    },
+    {
+      "timesteps": 135168,
+      "mean_episode_reward": 8.71
+    },
+    {
+      "timesteps": 137216,
+      "mean_episode_reward": 9.102
+    },
+    {
+      "timesteps": 139264,
+      "mean_episode_reward": 8.483
+    },
+    {
+      "timesteps": 141312,
+      "mean_episode_reward": 9.088
+    },
+    {
+      "timesteps": 143360,
+      "mean_episode_reward": 8.522
+    },
+    {
+      "timesteps": 145408,
+      "mean_episode_reward": 8.598
+    },
+    {
+      "timesteps": 147456,
+      "mean_episode_reward": 8.577
+    },
+    {
+      "timesteps": 149504,
+      "mean_episode_reward": 8.533
+    },
+    {
+      "timesteps": 151552,
+      "mean_episode_reward": 8.593
+    },
+    {
+      "timesteps": 153600,
+      "mean_episode_reward": 8.336
+    },
+    {
+      "timesteps": 155648,
+      "mean_episode_reward": 7.798
+    },
+    {
+      "timesteps": 157696,
+      "mean_episode_reward": 7.792
+    },
+    {
+      "timesteps": 159744,
+      "mean_episode_reward": 7.928
+    },
+    {
+      "timesteps": 161792,
+      "mean_episode_reward": 8.333
+    },
+    {
+      "timesteps": 163840,
+      "mean_episode_reward": 8.725
+    },
+    {
+      "timesteps": 165888,
+      "mean_episode_reward": 8.114
+    },
+    {
+      "timesteps": 167936,
+      "mean_episode_reward": 7.608
+    },
+    {
+      "timesteps": 169984,
+      "mean_episode_reward": 8.961
+    },
+    {
+      "timesteps": 172032,
+      "mean_episode_reward": 8.771
+    },
+    {
+      "timesteps": 174080,
+      "mean_episode_reward": 8.103
+    },
+    {
+      "timesteps": 176128,
+      "mean_episode_reward": 8.063
+    },
+    {
+      "timesteps": 178176,
+      "mean_episode_reward": 8.328
+    },
+    {
+      "timesteps": 180224,
+      "mean_episode_reward": 8.521
+    },
+    {
+      "timesteps": 182272,
+      "mean_episode_reward": 8.324
+    },
+    {
+      "timesteps": 184320,
+      "mean_episode_reward": 8.289
+    },
+    {
+      "timesteps": 186368,
+      "mean_episode_reward": 8.009
+    },
+    {
+      "timesteps": 188416,
+      "mean_episode_reward": 8.007
+    },
+    {
+      "timesteps": 190464,
+      "mean_episode_reward": 8.046
+    },
+    {
+      "timesteps": 192512,
+      "mean_episode_reward": 8.044
+    },
+    {
+      "timesteps": 194560,
+      "mean_episode_reward": 9.091
+    },
+    {
+      "timesteps": 196608,
+      "mean_episode_reward": 7.724
+    },
+    {
+      "timesteps": 198656,
+      "mean_episode_reward": 8.504
+    },
+    {
+      "timesteps": 200704,
+      "mean_episode_reward": 7.847
+    },
+    {
+      "timesteps": 202752,
+      "mean_episode_reward": 8.96
+    },
+    {
+      "timesteps": 204800,
+      "mean_episode_reward": 8.771
+    },
+    {
+      "timesteps": 206848,
+      "mean_episode_reward": 8.583
+    },
+    {
+      "timesteps": 208896,
+      "mean_episode_reward": 8.799
+    },
+    {
+      "timesteps": 210944,
+      "mean_episode_reward": 8.527
+    },
+    {
+      "timesteps": 212992,
+      "mean_episode_reward": 8.807
+    },
+    {
+      "timesteps": 215040,
+      "mean_episode_reward": 9.247
+    },
+    {
+      "timesteps": 217088,
+      "mean_episode_reward": 8.748
+    },
+    {
+      "timesteps": 219136,
+      "mean_episode_reward": 8.634
+    },
+    {
+      "timesteps": 221184,
+      "mean_episode_reward": 7.836
+    },
+    {
+      "timesteps": 223232,
+      "mean_episode_reward": 8.116
+    },
+    {
+      "timesteps": 225280,
+      "mean_episode_reward": 8.013
+    },
+    {
+      "timesteps": 227328,
+      "mean_episode_reward": 8.44
+    },
+    {
+      "timesteps": 229376,
+      "mean_episode_reward": 8.236
+    },
+    {
+      "timesteps": 231424,
+      "mean_episode_reward": 8.321
+    },
+    {
+      "timesteps": 233472,
+      "mean_episode_reward": 8.925
+    },
+    {
+      "timesteps": 235520,
+      "mean_episode_reward": 8.147
+    },
+    {
+      "timesteps": 237568,
+      "mean_episode_reward": 8.797
+    },
+    {
+      "timesteps": 239616,
+      "mean_episode_reward": 9.333
+    },
+    {
+      "timesteps": 241664,
+      "mean_episode_reward": 8.094
+    },
+    {
+      "timesteps": 243712,
+      "mean_episode_reward": 9.003
+    },
+    {
+      "timesteps": 245760,
+      "mean_episode_reward": 8.649
+    },
+    {
+      "timesteps": 247808,
+      "mean_episode_reward": 8.403
+    },
+    {
+      "timesteps": 249856,
+      "mean_episode_reward": 8.0
+    },
+    {
+      "timesteps": 251904,
+      "mean_episode_reward": 7.94
+    },
+    {
+      "timesteps": 253952,
+      "mean_episode_reward": 8.43
+    },
+    {
+      "timesteps": 256000,
+      "mean_episode_reward": 7.939
+    },
+    {
+      "timesteps": 258048,
+      "mean_episode_reward": 8.613
+    },
+    {
+      "timesteps": 260096,
+      "mean_episode_reward": 9.274
+    },
+    {
+      "timesteps": 262144,
+      "mean_episode_reward": 8.397
+    },
+    {
+      "timesteps": 264192,
+      "mean_episode_reward": 8.412
+    },
+    {
+      "timesteps": 266240,
+      "mean_episode_reward": 8.435
+    },
+    {
+      "timesteps": 268288,
+      "mean_episode_reward": 7.948
+    },
+    {
+      "timesteps": 270336,
+      "mean_episode_reward": 8.229
+    },
+    {
+      "timesteps": 272384,
+      "mean_episode_reward": 8.943
+    },
+    {
+      "timesteps": 274432,
+      "mean_episode_reward": 7.807
+    },
+    {
+      "timesteps": 276480,
+      "mean_episode_reward": 8.377
+    },
+    {
+      "timesteps": 278528,
+      "mean_episode_reward": 8.366
+    },
+    {
+      "timesteps": 280576,
+      "mean_episode_reward": 8.6
+    },
+    {
+      "timesteps": 282624,
+      "mean_episode_reward": 8.053
+    },
+    {
+      "timesteps": 284672,
+      "mean_episode_reward": 8.179
+    },
+    {
+      "timesteps": 286720,
+      "mean_episode_reward": 8.98
+    },
+    {
+      "timesteps": 288768,
+      "mean_episode_reward": 8.58
+    },
+    {
+      "timesteps": 290816,
+      "mean_episode_reward": 7.758
+    },
+    {
+      "timesteps": 292864,
+      "mean_episode_reward": 8.465
+    },
+    {
+      "timesteps": 294912,
+      "mean_episode_reward": 8.066
+    },
+    {
+      "timesteps": 296960,
+      "mean_episode_reward": 8.894
+    },
+    {
+      "timesteps": 299008,
+      "mean_episode_reward": 8.285
+    },
+    {
+      "timesteps": 301056,
+      "mean_episode_reward": 8.815
+    }
+  ]
+}

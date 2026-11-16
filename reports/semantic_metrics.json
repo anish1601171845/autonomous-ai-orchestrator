@@ -1,0 +1,8 @@
+{
+  "method": "cosine similarity (tfidf_lsa)",
+  "pairs": 26968,
+  "positive_rate": 0.069,
+  "roc_auc": 0.7135,
+  "average_precision": 0.1432,
+  "note": "Similarity is symmetric, so it scores A->B and B->A identically; it cannot recover direction."
+}

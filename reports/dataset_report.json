@@ -1,0 +1,41 @@
+{
+  "source": "SYNTHETIC",
+  "cleaning": {
+    "rows_in": 6354,
+    "duplicates_removed": 125,
+    "empty_descriptions_removed": 60,
+    "imputed_complexity": 237,
+    "rows_out": 6169
+  },
+  "split": {
+    "train": 4286,
+    "val": 612,
+    "test": 1271,
+    "grouped_by": "project_id",
+    "project_overlap": 0
+  },
+  "eda": {
+    "rows": 6169,
+    "projects": 300,
+    "category_counts": {
+      "development": 1835,
+      "testing": 1627,
+      "analysis": 1098,
+      "documentation": 914,
+      "deployment": 695
+    },
+    "priority_counts": {
+      "medium": 2159,
+      "low": 1851,
+      "high": 1544,
+      "critical": 615
+    },
+    "mean_tasks_per_project": 20.56,
+    "corr_priority_rank": {
+      "urgency": 0.579,
+      "business_impact": 0.511,
+      "estimated_complexity": 0.283,
+      "num_dependents": 0.317
+    }
+  }
+}

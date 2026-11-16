@@ -1,0 +1,20 @@
+[project]
+name = "autonomous-ai-orchestrator"
+version = "1.0.0"
+description = "Autonomous AI Multi-Agent Workflow Orchestrator: LangGraph agents + ML classification/priority + GNN dependencies + RL scheduling"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["workspace", "data", "models", ".git"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning", "ignore::UserWarning"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+extend-exclude = ["workspace", "notebooks", "reports/sample_run"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "B008", "B905", "B023"]

@@ -1,0 +1,24 @@
+# keep the build context small and free of secrets
+.git
+.gitignore
+.venv
+venv
+env
+.env
+.env.*
+!.env.example
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.ruff_cache
+.ipynb_checkpoints
+*.db
+workspace/*
+!workspace/.gitkeep
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+docker-compose*.yml
+Dockerfile
+.dockerignore
+*.zip
